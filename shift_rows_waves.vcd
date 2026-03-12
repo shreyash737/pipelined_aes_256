@@ -1,0 +1,25 @@
+$date
+	Fri Mar 13 00:40:10 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module shift_rows_tb $end
+$scope module uut $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 ! i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10000 !
+$end
+#20000

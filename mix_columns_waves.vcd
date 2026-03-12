@@ -1,0 +1,49 @@
+$date
+	Fri Mar 13 00:35:15 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mix_columns_tb $end
+$scope module uut $end
+$scope function xtime $end
+$var reg 8 ! in [7:0] $end
+$upscope $end
+$scope function xtime3 $end
+$var reg 8 " in [7:0] $end
+$upscope $end
+$scope begin genblk1[0] $end
+$var parameter 2 # i $end
+$upscope $end
+$scope begin genblk1[4] $end
+$var parameter 4 $ i $end
+$upscope $end
+$scope begin genblk1[8] $end
+$var parameter 5 % i $end
+$upscope $end
+$scope begin genblk1[12] $end
+$var parameter 5 & i $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 ' i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1100 &
+b1000 %
+b100 $
+b0 #
+$end
+#0
+$dumpvars
+b10000 '
+b0 "
+b0 !
+$end
+#20000

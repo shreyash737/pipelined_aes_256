@@ -1,0 +1,121 @@
+$date
+	Fri Mar 13 00:14:06 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module sub_bytes_tb $end
+$scope module uut $end
+$scope module instance1 $end
+$var wire 8 ! in [7:0] $end
+$var reg 8 " out [7:0] $end
+$upscope $end
+$scope module instance10 $end
+$var wire 8 # in [7:0] $end
+$var reg 8 $ out [7:0] $end
+$upscope $end
+$scope module instance11 $end
+$var wire 8 % in [7:0] $end
+$var reg 8 & out [7:0] $end
+$upscope $end
+$scope module instance12 $end
+$var wire 8 ' in [7:0] $end
+$var reg 8 ( out [7:0] $end
+$upscope $end
+$scope module instance13 $end
+$var wire 8 ) in [7:0] $end
+$var reg 8 * out [7:0] $end
+$upscope $end
+$scope module instance14 $end
+$var wire 8 + in [7:0] $end
+$var reg 8 , out [7:0] $end
+$upscope $end
+$scope module instance15 $end
+$var wire 8 - in [7:0] $end
+$var reg 8 . out [7:0] $end
+$upscope $end
+$scope module instance16 $end
+$var wire 8 / in [7:0] $end
+$var reg 8 0 out [7:0] $end
+$upscope $end
+$scope module instance2 $end
+$var wire 8 1 in [7:0] $end
+$var reg 8 2 out [7:0] $end
+$upscope $end
+$scope module instance3 $end
+$var wire 8 3 in [7:0] $end
+$var reg 8 4 out [7:0] $end
+$upscope $end
+$scope module instance4 $end
+$var wire 8 5 in [7:0] $end
+$var reg 8 6 out [7:0] $end
+$upscope $end
+$scope module instance5 $end
+$var wire 8 7 in [7:0] $end
+$var reg 8 8 out [7:0] $end
+$upscope $end
+$scope module instance6 $end
+$var wire 8 9 in [7:0] $end
+$var reg 8 : out [7:0] $end
+$upscope $end
+$scope module instance7 $end
+$var wire 8 ; in [7:0] $end
+$var reg 8 < out [7:0] $end
+$upscope $end
+$scope module instance8 $end
+$var wire 8 = in [7:0] $end
+$var reg 8 > out [7:0] $end
+$upscope $end
+$scope module instance9 $end
+$var wire 8 ? in [7:0] $end
+$var reg 8 @ out [7:0] $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 A i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10000 A
+b1100011 @
+b0 ?
+b1100011 >
+b0 =
+b1100011 <
+b0 ;
+b1100011 :
+b0 9
+b1100011 8
+b0 7
+b1100011 6
+b0 5
+b1110111 4
+b10 3
+b1111100 2
+b1 1
+b1100011 0
+b0 /
+b1100011 .
+b0 -
+b1100011 ,
+b0 +
+b1100011 *
+b0 )
+b1100011 (
+b0 '
+b1100011 &
+b0 %
+b1100011 $
+b0 #
+b1100011 "
+b0 !
+$end
+#20000

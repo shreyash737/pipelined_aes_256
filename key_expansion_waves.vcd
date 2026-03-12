@@ -1,0 +1,49 @@
+$date
+	Fri Mar 13 01:39:01 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module key_expansion_tb $end
+$scope module uut $end
+$var integer 32 ! i [31:0] $end
+$scope function get_rcon $end
+$var reg 4 " round_idx [3:0] $end
+$upscope $end
+$scope function rcon $end
+$var reg 32 # in [31:0] $end
+$var reg 8 $ rc [7:0] $end
+$upscope $end
+$scope function rot_word $end
+$var reg 32 % in [31:0] $end
+$upscope $end
+$scope function s_box $end
+$var reg 8 & in [7:0] $end
+$upscope $end
+$scope function sub_word $end
+$var reg 32 ' in [31:0] $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 ( i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 (
+b100000110101000011101111001110 '
+b100000 &
+b11001110001000001101010000111011 %
+b1000000 $
+b10110111010010001110001010001011 #
+b111 "
+b111100 !
+$end
+#20000
