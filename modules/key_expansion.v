@@ -1,7 +1,7 @@
 
 
 
-module key_expansion(input [31:0] in [0:7] , output reg [31:0] out [0:59]);
+module key_expansion(input [31:0] key [0:7] , output reg [31:0] expanded_key [0:59]);
     function [7:0] get_rcon(input [3:0] round_idx); // Give 'i' a width (4 bits for 14 rounds)
     begin
         case(round_idx)
