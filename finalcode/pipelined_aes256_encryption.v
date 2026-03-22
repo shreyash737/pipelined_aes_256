@@ -94,11 +94,17 @@ module top_module (
 
 
 
+    wire [7:0] state_in [0:15];
+    genvar j;
+    for (j=0; j<16; j=j+1) begin
+        assign state_in[j] = state[i-1][j];
+    end
+
     aes_round aes_instance(
-        .in(state[i-1]),
-        .key(round_key),
-        .out(stage_out)
-    );
+         .in(state_in),
+         .key(round_key),
+         .out(stage_out)
+     );
 
 
     always @(posedge clk or negedge rst_n) begin
@@ -109,7 +115,10 @@ module top_module (
             end
                 
          end else begin
-                 state[i] <= stage_out ;
+                 integer h;
+                 for(h=0; h<16 ; h=h+1) begin
+                    state[i][h] = stage_out[h];
+                 end
         end
 
     end
@@ -521,15 +530,17 @@ module key_expansion(input [31:0] key [0:7] , output reg [31:0] expanded_key [0:
 
 
 
-     integer  i ;
+   integer i;
     
    always @(*) begin
+         
         
         for(i=0;i<8;i++) begin
            
             out[i] = in[i];
            
         end
+       
 
         for(i=8;i<60;i++) begin
             if (i%8==0) begin
