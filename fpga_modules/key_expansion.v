@@ -4,19 +4,18 @@ module key_expansion(input [255:0]key,input clk,input reset_n,output reg [1919:0
     wire [31:0] sub_word_output;
     
 
-    genvar i;
-    generate
+    
         s_box instance1(.in(sub_word_input[7:0]),.out(sub_word_output[7:0]));
-        s_box instance1(.in(sub_word_input[15:8]),.out(sub_word_output[15:7]));
-        s_box instance1(.in(sub_word_input[23:16]),.out(sub_word_output[23:16]));
-        s_box instance1(.in(sub_word_input[31:24]),.out(sub_word_output[31:24]));
-    endgenerate
+        s_box instance2(.in(sub_word_input[15:8]),.out(sub_word_output[15:8]));
+        s_box instance3(.in(sub_word_input[23:16]),.out(sub_word_output[23:16]));
+        s_box instance4(.in(sub_word_input[31:24]),.out(sub_word_output[31:24]));
+   
 
     integer counter = 0;
 
-    assign sbox_in_word = (count % 8 == 0) ? {w[count-1][23:0], w[count-1][31:24]} : // RotWord
-                          (count % 8 == 4) ? w[count-1]                           : // SubWord only
-                          32'h0;
+    assign sub_word_input = (counter % 8 == 0) ? {internal_key[counter-1][23:0], internal_key[counter-1][31:24]} : // RotWord
+                            (counter % 8 == 4) ? internal_key[counter-1]                           : // SubWord only
+                            32'h0;
 
     always @(posedge clk or negedge reset_n) begin
         if(!reset_n) begin
@@ -26,14 +25,14 @@ module key_expansion(input [255:0]key,input clk,input reset_n,output reg [1919:0
             counter <= 0;
         end else begin
             if(counter<8)begin
-                internal_key = key[(counter*8-1):(counter*8)];
-                counter = counter+1;
+                internal_key <= key[counter * 32 +: 32];
+                counter <= counter+1;
             end
 
             if(count < 60) begin
                 if(counter%8==0) begin
                    
-                    internal_key[counter] <= internal_key[counter-8]^sub_word_output^{get_rcon(count/8), 24'h0};
+                    internal_key[counter] <= internal_key[counter-8]^sub_word_output^{get_rcon(counter/8), 24'h0};
                 end else if(counter%8==4) begin
                     
                     internal_key[counter] <= internal_key[counter-8]^sub_word_output;
